@@ -13,9 +13,7 @@ pool:
 steps:
 - task: Maven@3
   inputs:
-    mavenPomFile: './my-app/pom.xml'
-    goals: 'compile'
-    options: 'java -cp target/classes com.mycompany.app.App'
+    mavenPomFile: './my-app/pom.xml'    
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
@@ -23,3 +21,5 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+    goals: 'package'
+    # options: 'java -cp target/classes com.mycompany.app.App'
