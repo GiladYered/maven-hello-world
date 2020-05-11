@@ -13,6 +13,17 @@
       <annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
   </properties>
 
+  <repository>
+    <id>maven-hello-world-art</id>
+    <url>https://pkgs.dev.azure.com/gilady83/maven-hello-world/_packaging/maven-hello-world-art/maven/v1</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
+	
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
