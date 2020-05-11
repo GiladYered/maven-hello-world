@@ -13,7 +13,7 @@ pool:
 steps:
 - task: Maven@3
   inputs:
-    mavenPomFile: '/my-app/pom.xml'
+    mavenPomFile: './my-app/pom.xml'
     goals: 'compile'
     options: 'java -cp target/classes com.mycompany.app.App'
     publishJUnitResults: true
