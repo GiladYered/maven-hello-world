@@ -37,3 +37,9 @@ steps:
     repository: 'devopsworkking/devops_exercise'
     command: 'buildAndPush'
     Dockerfile: 'DockerFile'
+
+- task: CmdLine@2
+  inputs:
+    script: |
+    docker run \
+      --rm --name devopsworkking/devops_exercise:41
