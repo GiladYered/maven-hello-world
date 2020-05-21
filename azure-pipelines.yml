@@ -27,6 +27,11 @@ steps:
     goals: 'package'
     # options: 'java -cp target/classes com.mycompany.app.App'
 
+
+- task: CopyFiles@1
+  inputs:
+    targetFolder: '$(Build.ArtifactStagingDirectory)'   
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
