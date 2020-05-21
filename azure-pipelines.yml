@@ -35,4 +35,4 @@ steps:
     containerRegistry: 'DockerHubGilad'
     repository: 'devops_exercise'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: './Dockerfile'
