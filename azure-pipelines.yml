@@ -1,6 +1,5 @@
 # Maven
 
-
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -28,6 +27,16 @@ steps:
     goals: 'package'
     # options: 'java -cp target/classes com.mycompany.app.App'
 
+
+- task: CmdLine@2
+  inputs:
+    script: |
+      ls -l
+      sudo apt-get tree 
+      cd ..
+      tree -L 4
+      
+      echo Hello world
 
 - task: CopyFiles@1
   inputs:
