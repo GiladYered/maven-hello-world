@@ -8,7 +8,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'maven:3.6.3-openjdk-11-slim'
 
 variables:
   imageName: 'pipelines-devops-exercise-docker'
@@ -25,7 +25,11 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
     goals: 'package'
-   
+
+- task: CmdLine@2
+  inputs:
+    script: |
+      ls -l   
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerHubGilad'
