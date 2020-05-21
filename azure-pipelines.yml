@@ -43,4 +43,5 @@ steps:
     script: |
       docker ps -a
       docker images
-      docker run devops_exercise
+      docker run devops_exercise:$($(Build.BuildId))
+
