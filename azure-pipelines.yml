@@ -8,7 +8,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'maven:3.6.3-openjdk-11-slim'
+  vmImage: 'ubuntu-latest'
 
 variables:
   imageName: 'pipelines-devops-exercise-docker'
