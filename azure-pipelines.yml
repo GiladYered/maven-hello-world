@@ -14,7 +14,6 @@ variables:
   imageName: 'pipelines-devops-exercise-docker'
   imageRepository: 'devopsworkking/devops_exercise'
   containerRegistry: 'DockerHubGilad'
-  tag: '$(Build.BuildId)'
 
 steps:
 - task: Maven@3
@@ -42,12 +41,12 @@ steps:
     command: 'buildAndPush'
     Dockerfile: 'DockerFile'
     tags: |
-          $(tag)
+          $(Build.BuildId)
 
 - task: CmdLine@2
   inputs:
     script: |
-      docker ps -a
-      docker images
-      docker run devopsworkking/devops_exercise
+      sudo docker ps -a
+      sudo docker images
+      sudo docker run --name  "test_$(Build.BuildId)" devopsworkking/devops_exercise:$(Build.BuildId)
 
