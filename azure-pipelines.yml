@@ -25,29 +25,7 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
     goals: 'package'
-    # options: 'java -cp target/classes com.mycompany.app.App'
-
-
-- task: CmdLine@2
-  inputs:
-    script: |
-      ls -l
-      sudo apt-get tree 
-      cd ..
-      tree -L 4
-      
-      echo Hello world
-
-- task: CopyFiles@1
-  inputs:
-    targetFolder: '$(Build.ArtifactStagingDirectory)'   
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
-    
+   
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerHubGilad'
