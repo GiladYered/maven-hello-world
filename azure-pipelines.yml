@@ -12,6 +12,9 @@ pool:
 
 variables:
   imageName: 'pipelines-devops-exercise-docker'
+  imageRepository: 'devopsworkking/devops_exercise'
+  containerRegistry: 'DockerHubGilad'
+  tag: '$(Build.BuildId)'
 
 steps:
 - task: Maven@3
@@ -32,16 +35,19 @@ steps:
       pwd
       ls -l   
 - task: Docker@2
+  displayName: Build and push an image to container registry
   inputs:
-    containerRegistry: 'DockerHubGilad'
-    repository: 'devopsworkking/devops_exercise'
+    containerRegistry: $(containerRegistry)
+    repository: $(imageRepository)
     command: 'buildAndPush'
     Dockerfile: 'DockerFile'
+    tags: |
+          $(tag)
 
 - task: CmdLine@2
   inputs:
     script: |
       docker ps -a
       docker images
-      docker run devops_exercise
+      docker run devopsworkking/devops_exercise
 
