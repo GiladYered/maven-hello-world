@@ -41,4 +41,4 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      docker run -it devopsworkking/devops_exercise
+      docker run devopsworkking/devops_exercise
