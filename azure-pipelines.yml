@@ -28,11 +28,11 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: |
+    script: |      
       ls -l   
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerHubGilad'
     repository: 'devops_exercise'
     command: 'buildAndPush'
-    Dockerfile: './Dockerfile'
+    Dockerfile: '.Dockerfile'
